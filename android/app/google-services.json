@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "222370826118",
+    "project_id": "how-test-app",
+    "storage_bucket": "how-test-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222370826118:android:49027cf34e12df38390e07",
+        "android_client_info": {
+          "package_name": "how.text.appOWO"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222370826118-3cnq2srbk3tm124p6if9g30d3vpsti18.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCBdwZbilz6Fk5ik4IzPkkL6JhdoAhK1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222370826118-3cnq2srbk3tm124p6if9g30d3vpsti18.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
