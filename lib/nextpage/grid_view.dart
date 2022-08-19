@@ -27,10 +27,16 @@ class _grid_view extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                shape: BeveledRectangleBorder(),
+                side: BorderSide(
+                  width: 2,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
               // child: Text('按鈕' + '\n' + '$result'),
               child: new Text("測試一"),
-              shape: BeveledRectangleBorder(),
               onPressed: () {
                 // String name = "Wang";
                 // Navigator.pushNamed(context, '/TwoPage', arguments: name);

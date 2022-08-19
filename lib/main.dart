@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
           // systemNavigationBarDividerColor: Color(0xffffffff),
           systemNavigationBarIconBrightness: Brightness.light,
           statusBarColor: Color(0xff2094F3),
+
           ///这是设置状态栏的图标和字体的颜色
           ///Brightness.light  一般都是显示为白色
           ///Brightness.dark 一般都是显示为黑色
@@ -213,13 +214,16 @@ class _OnePage extends State<HomePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             // child: Text('按鈕' + '\n' + '$result'),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10.0, 10.0, 0.0, 10.0),
               child: Text(HomeComponentsList[type].getTitle()!),
             ),
-            shape: const BeveledRectangleBorder(),
+            style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            )),
             onPressed: () {
               // String name = "Wang";
               // Navigator.pushNamed(context, '/TwoPage', arguments: name);
@@ -311,6 +315,9 @@ class _OnePage extends State<HomePage> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _childrenList(),
+            ),
+            const SizedBox(
+              height: 35,
             ),
           ])
         ])));
