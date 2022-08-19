@@ -2,6 +2,7 @@ import 'dart:developer' as developer;
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:untitled/Integrate.dart';
 import 'package:sprintf/sprintf.dart';
@@ -20,6 +21,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    try {
+      SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
+          systemNavigationBarColor: Color(0xff2094F3),
+          // systemNavigationBarDividerColor: Color(0xffffffff),
+          systemNavigationBarIconBrightness: Brightness.light,
+          statusBarColor: Color(0xff2094F3),
+          ///这是设置状态栏的图标和字体的颜色
+          ///Brightness.light  一般都是显示为白色
+          ///Brightness.dark 一般都是显示为黑色
+          statusBarIconBrightness: Brightness.light //虚拟按键背景色
+          );
+      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    } catch (e) {
+      print(e);
+    }
     return MaterialApp(
       localizationsDelegates: const [
         // // 本地化的代理类

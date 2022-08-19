@@ -20,12 +20,16 @@ class Into extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LocaleModel()),
       ],
       child: Consumer2<ThemeModel, LocaleModel>(
-        builder: (BuildContext context,ThemeModel themeModel, localeModel, child) {
+        builder:
+            (BuildContext context, ThemeModel themeModel, localeModel, child) {
           return MaterialApp(
             theme: ThemeData(
               // primarySwatch: themeModel.theme,
+              primaryColor: Color(0xff2094F3),
+                  brightness: Brightness.light,
+                  accentColor: const Color(0xFF1976D2)
             ),
-            onGenerateTitle: (context){
+            onGenerateTitle: (context) {
               return S.of(context).title;
             },
             home: HomeRoute(),
@@ -51,10 +55,10 @@ class Into extends StatelessWidget {
                 //跟随系统
                 Locale locale;
                 if (supportedLocales.contains(_locale)) {
-                  locale= _locale!;
+                  locale = _locale!;
                 } else {
                   //如果系统语言不是中文简体或美国英语，则默认使用中文繁体
-                  locale= Locale('zh', 'TW'); // 中文繁体
+                  locale = Locale('zh', 'TW'); // 中文繁体
                 }
                 return locale;
               }
