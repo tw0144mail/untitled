@@ -57,7 +57,7 @@ class _ConfirmDialog extends Dialog {
       child: AlertDialog(
         title: Text(title ?? '确定****?'),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             child: Text('取消'),
             onPressed: () {
               Navigator.pop(context, false);
@@ -66,7 +66,7 @@ class _ConfirmDialog extends Dialog {
               }
             },
           ),
-          FlatButton(
+          TextButton(
             child: Text('确定'),
             onPressed: () {
               Navigator.pop(context, true);
