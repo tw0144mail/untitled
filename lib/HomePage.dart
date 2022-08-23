@@ -144,17 +144,6 @@ class _OnePage extends State<HomePage> {
                     '0' +
                     '/' +
                     '66');
-                // context.push('/Main2/' +
-                //     '產品名稱xxx' +
-                //     '/' +
-                //     '產品內容xxx' +
-                //     '/' +
-                //     '0' +
-                //     '/' +
-                //     '66');
-                //  setState(() {
-                //    result = "    ";
-                //  });
               } else {
                 toTheNextPage(context, HomeComponentsList[type].nextPage!);
               }
