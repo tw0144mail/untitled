@@ -24,8 +24,8 @@ import 'package:untitled/resource/strings.dart';
 //   }
 // }
 
-class main_bottom_navigation_bar extends StatefulWidget {
-  main_bottom_navigation_bar({Key? key}) : super(key: key);
+class MainBottomNavigationBar extends StatefulWidget {
+  MainBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
   _BottomNavigationControllerState createState() =>
@@ -33,7 +33,7 @@ class main_bottom_navigation_bar extends StatefulWidget {
 }
 
 class _BottomNavigationControllerState
-    extends State<main_bottom_navigation_bar> {
+    extends State<MainBottomNavigationBar> {
   //目前選擇頁索引值
   int _currentIndex = 0; //預設值
   int _currentIndex2 = 0;

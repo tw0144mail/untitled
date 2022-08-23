@@ -5,6 +5,7 @@ import 'package:flutter_easylogger/flutter_logger.dart';
 
 // 页面使用
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
 import 'package:untitled/default_ui/next_page_preset_adapter.dart';
 import 'package:untitled/default_ui/next_page_preset_class.dart';
 import 'package:untitled/element/event_bus_utils.dart';
@@ -22,9 +23,21 @@ class main2 extends StatefulWidget {
   // final String data;
   // main2({Key? key, required this.data}) : super(key: key);
 
-  final Product product;
+  // final Product product;
 
-  main2({Key? key, required this.product}) : super(key: key);
+  //產品名稱
+  final String? name;
+
+  //產品描述
+  final String? desc;
+
+  //產品價格
+  int price;
+
+  //產品庫存
+  final int? stock;
+
+  main2({Key? key, required this.name, required this.desc, required this.price, required this.stock}) : super(key: key);
 
   // const main2();
   static final RouteObserver<PageRoute> routeObserver =
@@ -42,10 +55,10 @@ class _TwoPage extends State<main2> with RouteAware {
   String Button_text = "切換圖片-甘雨";
   String _content = "";
 
-  late Product product = widget.product;
+  // late Product product = widget.product;
 
-  @override
   void initState() {
+    // log("浩浩測試 wProduct"+wProduct);
     // print('Main2 ${product.price}');
     _content = "浩";
     EventBusUtils.getInstance()
@@ -69,7 +82,8 @@ class _TwoPage extends State<main2> with RouteAware {
   @override
   void didPopNext() {
     // Covering route was popped off the navigator.
-    Navigator.pop(context, "B頁資料");
+    // Navigator.pop(context, "B頁資料");
+    context.push('/'+widget.price.toString());
     print('返回NewView');
     Logger.v("返回NewView");
   }
@@ -89,13 +103,14 @@ class _TwoPage extends State<main2> with RouteAware {
   @override
   Future<bool> _requestPop() {
     print('返回NewView');
-    Navigator.pop(context, widget.product.price.toString());
+    // Navigator.pop(context, widget.price.toString());
+    context.go('/HomePage/'+widget.price.toString());
     return Future(() => false);
   }
 
   @override
   Widget build(BuildContext context) {
-    log(widget.product.price.toString());
+    log(widget.price.toString());
     EventBusUtils.getInstance()
         .on<StringContentEvent>()
         .listen((event) {
@@ -146,7 +161,7 @@ class _TwoPage extends State<main2> with RouteAware {
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [Text(widget.product.price.toString())],
+                            children: [Text(widget.price.toString())],
                           ),
                           Row(children: <Widget>[
                             Container(
@@ -306,10 +321,10 @@ class _TwoPage extends State<main2> with RouteAware {
 
   void btnClickEvent() {
     setState(() {
-      widget.product.price++;
+      widget.price++;
     });
     // _main2frequency++;
-    print("" + widget.product.price.toString() + "拉");
+    print("" + widget.price.toString() + "拉");
   }
 
   void btnPicConvert() {
