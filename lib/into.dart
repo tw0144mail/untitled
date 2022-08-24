@@ -24,7 +24,7 @@ class _Into extends State<Into> {
     Timer.periodic(period, (timer) {
       //到时回调
       log("到时回调");
-      context.push('/HomePage' + '/' + '0');
+      context.go('/HomePage' + '/' + '0');
       //取消定时器，避免无限回调
       timer.cancel();
     });
