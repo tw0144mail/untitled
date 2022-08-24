@@ -15,8 +15,6 @@ class Into extends StatefulWidget {
 }
 
 class _Into extends State<Into> {
-
-
   @override
   void initState() {
     super.initState();
@@ -32,6 +30,7 @@ class _Into extends State<Into> {
 
   @override
   Widget build(BuildContext context) {
+    String picture_location = "assets/images/ganyu_test.png";
     log("Into  build");
     // const timeout = const Duration(seconds: 5);
     // Timer(timeout, () {
@@ -39,9 +38,15 @@ class _Into extends State<Into> {
     //   log("到时回调");
     //   context.push('/HomePage' + '/' + '2');
     // });
+    return Image.asset(
+      picture_location,
+      fit: BoxFit.cover,
+      height: double.infinity,
+      width: double.infinity,
+      alignment: Alignment.center,
+    );
 
-
-    return Text("好啦 煩誒");
+    // return Text("好啦 煩誒");
   }
 
   @override
