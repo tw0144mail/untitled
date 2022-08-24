@@ -38,73 +38,96 @@ class _OnePage extends State<HomePage> {
   List<HomeComponents> HomeComponentsList = [
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.CustomPaintRoutePage]),
-        nextPage: CustomPaintRoute()),
+        nextPage: CustomPaintRoute(),
+        address: "CustomPaintRoute"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.NextPage]),
-        nextPage: MainBottomNavigationBar()),
+        nextPage: MainBottomNavigationBar(),
+        address: "MainBottomNavigationBar"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.WithChunksPage]),
-        nextPage: WithChunks()),
+        nextPage: WithChunks(),
+        address: "WithChunks"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.SocketRoutePage]),
-        nextPage: SocketRoute()),
+        nextPage: SocketRoute(),
+        address: "SocketRoute"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.GuidePage]),
-        nextPage: MainBottomNavigationBar()),
+        nextPage: MainBottomNavigationBar(),
+        address: "MainBottomNavigationBar"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.TabPage]),
-        nextPage: tabbar()),
+        nextPage: tabbar(),
+        address: "Tabbar"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.DrawerPage]),
-        nextPage: drawer()),
+        nextPage: drawer(),
+        address: "Drawer"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.StackComponentsPage]),
-        nextPage: stack()),
+        nextPage: stack(),
+        address: "Stack"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.ListPage]),
-        nextPage: list_view()),
+        nextPage: list_view(),
+        address: "ListView"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.GridElementPage]),
-        nextPage: grid_view()),
+        nextPage: grid_view(),
+        address: "GridView"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.TableElementPage]),
-        nextPage: table()),
+        nextPage: table(),
+        address: "Table"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.DynamicGenerationPage]),
-        nextPage: DynamicGeneration()),
+        nextPage: DynamicGeneration(),
+        address: "DynamicGeneration"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.MixedPage]),
-        nextPage: GradientButtonRoute()),
+        nextPage: GradientButtonRoute(),
+        address: "GradientButtonRoute"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.TurnBoxPage]),
-        nextPage: TurnBoxRoute()),
+        nextPage: TurnBoxRoute(),
+        address: "TurnBoxRoute"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.GradientCircularPage]),
-        nextPage: GradientCircularProgressRoute()),
+        nextPage: GradientCircularProgressRoute(),
+        address: "GradientCircularProgressRoute"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.CustomCheckboxPage]),
-        nextPage: CustomCheckboxTest()),
+        nextPage: CustomCheckboxTest(),
+        address: "CustomCheckboxTest"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.DoneWidgetTestPage]),
-        nextPage: DoneWidgetTest()),
+        nextPage: DoneWidgetTest(),
+        address: "DoneWidgetTest"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.WaterMarkPage]),
-        nextPage: WaterMark()),
+        nextPage: WaterMark(),
+        address: "WaterMark"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.WaterMarkTestPage]),
-        nextPage: WaterMarkTest()),
+        nextPage: WaterMarkTest(),
+        address: "WaterMarkTest"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.FileOperationRoutePage]),
-        nextPage: FileOperationRoute()),
+        nextPage: FileOperationRoute(),
+        address: "FileOperationRoute"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.HttpTestRoutePage]),
-        nextPage: HttpTestRoute()),
+        nextPage: HttpTestRoute(),
+        address: "HttpTestRoute"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.FutureBuilderRouteStatePage]),
-        nextPage: FutureBuilderRouteState()),
+        nextPage: FutureBuilderRouteState(),
+        address: "FutureBuilderRouteState"),
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.WebSocketsPage]),
-        nextPage: WebSocketRoute()),
+        nextPage: WebSocketRoute(),
+        address: "WebSocketRoute"),
   ];
 
 // Randomly colored Container
@@ -132,9 +155,8 @@ class _OnePage extends State<HomePage> {
                 // final Product product = Product(
                 //     name: "產品名稱xxx", desc: "產品內容xxx", price: 0, stock: 66);
                 // toTheNextPage(context, main2(name: "產品名稱xxx", desc: "產品內容xxx", price: 0, stock: 66));
-                String GoTO = result != "沒按過" ? result.toString() : "0";
-                context.push('/HomePage/' +
-                    GoTO +
+                // String GoTO = result != "沒按過" ? result.toString() : "0";
+                context.push(thisAddress+
                     '/' +
                     'Main2/' +
                     '產品名稱xxx' +
@@ -145,7 +167,8 @@ class _OnePage extends State<HomePage> {
                     '/' +
                     '66');
               } else {
-                toTheNextPage(context, HomeComponentsList[type].nextPage!);
+                // toTheNextPage(context, HomeComponentsList[type].nextPage!);
+                context.push(thisAddress + HomeComponentsList[type].address!);
               }
             },
           ),
