@@ -330,6 +330,16 @@ class S {
     );
   }
 
+  /// `MapPage`
+  String get MapPage {
+    return Intl.message(
+      'MapPage',
+      name: 'MapPage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `CustomPaintRoutePage`
   String get CustomPaintRoutePage {
     return Intl.message(

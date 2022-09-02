@@ -27,6 +27,7 @@
   "WithChunksPage": "WithChunksPage",
   "WebSocketsPage": "WebSocketsPage",
   "SocketRoutePage": "SocketRoutePage",
+  "MapPage": "MapPage",
   "CustomPaintRoutePage": "CustomPaintRoutePage",
   "loginPage": "loginPage",
   "NPressed": "Pressed%s",

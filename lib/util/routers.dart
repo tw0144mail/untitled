@@ -28,6 +28,7 @@ import '../nextpage/watermark.dart';
 import '../nextpage/watermark_test.dart';
 import '../nextpage/web_socket_route.dart';
 import '../nextpage/with_chunks.dart';
+import '../nextpage/map.dart';
 
 class Routes {
   static String r_main = '/';
@@ -55,6 +56,7 @@ class Routes {
   static String r_http_test_route = 'HttpTestRoute';
   static String r_future_builder_route_state = 'FutureBuilderRouteState';
   static String r_web_socket_route = 'WebSocketRoute';
+  static String r_map = 'Map';
 
   static GoRouter RoutesGoRouter() {
     return GoRouter(
@@ -176,6 +178,10 @@ class Routes {
             GoRoute(
               path: r_web_socket_route,
               builder: (context, state) => WebSocketRoute(),
+            ),
+            GoRoute(
+              path: r_map,
+              builder: (context, state) => Map(),
             ),
           ],
         ),

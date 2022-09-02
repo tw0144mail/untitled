@@ -27,6 +27,7 @@
   "WithChunksPage": "Http分塊下載頁&下載目的選擇",
   "WebSocketsPage": "WebSockets頁",
   "SocketRoutePage": "Socket API頁",
+  "MapPage": "地圖頁",
   "CustomPaintRoutePage": "我看到像是稿紙頁",
   "loginPage": "登入頁",
   "NPressed": "按了%s下",

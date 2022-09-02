@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HttpTestRoutePage":
             MessageLookupByLibrary.simpleMessage("HttpTestRoutePage"),
         "ListPage": MessageLookupByLibrary.simpleMessage("ListPage"),
+        "MapPage": MessageLookupByLibrary.simpleMessage("MapPage"),
         "MixedPage": MessageLookupByLibrary.simpleMessage("MixedPage"),
         "NPressed": MessageLookupByLibrary.simpleMessage("Pressed%s"),
         "NextPage": MessageLookupByLibrary.simpleMessage("NextPage"),

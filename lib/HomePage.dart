@@ -112,6 +112,9 @@ class _OnePage extends State<HomePage> {
     HomeComponents(
         title: sprintf(S.current.GoTo, [S.current.WebSocketsPage]),
         address: "WebSocketRoute"),
+    HomeComponents(
+        title: sprintf(S.current.GoTo, [S.current.MapPage]),
+        address: "Map"),
   ];
 
 // Randomly colored Container

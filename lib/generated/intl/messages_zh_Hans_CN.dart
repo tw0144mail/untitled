@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GuidePage": MessageLookupByLibrary.simpleMessage("引导页"),
         "HttpTestRoutePage": MessageLookupByLibrary.simpleMessage("HTTP请求页"),
         "ListPage": MessageLookupByLibrary.simpleMessage("列表页"),
+        "MapPage": MessageLookupByLibrary.simpleMessage("地圖頁"),
         "MixedPage": MessageLookupByLibrary.simpleMessage("自订(混和)页"),
         "NPressed": MessageLookupByLibrary.simpleMessage("按了%s下"),
         "NextPage": MessageLookupByLibrary.simpleMessage("下一页"),
