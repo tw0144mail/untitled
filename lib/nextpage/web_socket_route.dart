@@ -18,7 +18,7 @@ class _WebSocketRouteState extends State<WebSocketRoute> {
 
   @override
   void initState() {
-    //创建websocket连接
+    //創建websocket連接
     channel = IOWebSocketChannel.connect('ws://echo.websocket.events');
     super.initState();
   }
