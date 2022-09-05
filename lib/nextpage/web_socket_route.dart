@@ -41,9 +41,9 @@ class _WebSocketRouteState extends State<WebSocketRoute> {
             StreamBuilder(
               stream: channel.stream,
               builder: (context, snapshot) {
-                //网络不通会走到这
+                //網路不通會走到這
                 if (snapshot.hasError) {
-                  _text = "网络不通...";
+                  _text = "網路不通...";
                 } else if (snapshot.hasData) {
                   _text = "echo: "+snapshot.data.toString();
                 }
