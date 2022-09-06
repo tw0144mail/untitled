@@ -2,27 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:untitled/resource/strings.dart';
+import '../default_ui/next_page_preset_class.dart';
 
-class Map extends StatelessWidget {
-  const Map({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Google Maps Demo',
-      home: MapSample(),
-    );
-  }
-}
-
-class MapSample extends StatefulWidget {
-  const MapSample({Key? key}) : super(key: key);
+class Map extends StatefulWidget {
+  Map({Key? key}) : super(key: key);
 
   @override
-  State<MapSample> createState() => MapSampleState();
+  _Map createState() => _Map();
 }
 
-class MapSampleState extends State<MapSample> {
+class _Map extends State<Map> {
   final Completer<GoogleMapController> _controller = Completer();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
@@ -31,27 +21,31 @@ class MapSampleState extends State<MapSample> {
   );
 
   static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
+      // bearing: 192.8334901395799,
+      target: LatLng(25.0332915,121.5630238),
+      // tilt: 59.440717697143555,
+      zoom: 17.0);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _goToTheLake,
-        label: const Text('To the lake!'),
-        icon: const Icon(Icons.directions_boat),
-      ),
-    );
+    return NextPagePresetClass(
+        title: strings.GuidePage,
+        body: Scaffold(
+          body: GoogleMap(
+            mapType: MapType.hybrid,
+            initialCameraPosition: _kGooglePlex,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+            },
+          ),
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: _goToTheLake,
+            label: const Text('看看101ＯＷＯ'),
+            icon: const Icon(Icons.hail),
+          ),
+        ));
+
+
   }
 
   Future<void> _goToTheLake() async {
